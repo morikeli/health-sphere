@@ -77,14 +77,19 @@ def index_page():
 
     # diabetes prediction tab
     with tabs[1]:
-        diabetes_patients_pregnancies = st.number_input(label='Total pregnancies', min_value=0, max_value=20)
-        diabetes_patients_glucose = st.number_input(label='Glucose', min_value=0, max_value=200)
-        diabetes_patitents_bp = st.number_input(label='Blood pressure', min_value=0, max_value=130)    # blood pressure
-        diabetes_patients_skin_thickness = st.number_input(label='Skin thickness', min_value=0, max_value=100)
-        diabetes_patients_insulin = st.number_input(label='Insulin', min_value=0, max_value=1000)
-        diabetes_patients_bmi = st.number_input(label='Body Mass Index (BMI)', min_value=0, max_value=70)
-        diabetes_pedigree_func = st.text_input(label='Diabetes pedigree function')
-        diabetes_patients_age = st.number_input(label='Age',min_value=10, max_value=120)
+        tabs_col = st.columns([6, 6])
+
+        with tabs_col[0]:
+            diabetes_patients_age = st.number_input(label='Age',min_value=1, max_value=120,)
+            diabetes_patitents_bp = st.number_input(label='Blood pressure', min_value=0, max_value=130)    # blood pressure
+            diabetes_patients_bmi = st.text_input(label='Body Mass Index (BMI)')
+            diabetes_pedigree_func = st.text_input(label='Diabetes pedigree function')
+
+        with tabs_col[1]:
+            diabetes_patients_glucose = st.number_input(label='Glucose', min_value=0, max_value=200)
+            diabetes_patients_insulin = st.number_input(label='Insulin', min_value=0, max_value=1000)
+            diabetes_patients_skin_thickness = st.number_input(label='Skin thickness', min_value=0, max_value=100)
+            diabetes_patients_pregnancies = st.number_input(label='Total pregnancies', min_value=0, max_value=20)
 
     # heart disease tab
     with tabs[2]:
