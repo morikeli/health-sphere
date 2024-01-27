@@ -18,61 +18,75 @@ def index_page():
         "Parkinson's prediction",
     ])
 
+    # breast cancer prediction tab
     with tabs[0]:
         tabs_col = st.columns([6, 6, 6], gap='medium')
-
-        breast_cancer_tabs = st.tabs([
-            'Mean',
-            'SE',
-            'Worst',
-        ])
+        breast_cancer_tabs = st.tabs(['Mean', 'SE', 'Worst',])
 
         with breast_cancer_tabs[0]:
             if tabs_col[0]:
                 inner_tabs = st.columns([6, 6])
-                
                 with inner_tabs[0]:
-                    
-                    radius_mean = tabs_col[0].text_input(label='Radius mean')
-                    texture_mean = tabs_col[0].text_input(label='Texture mean')
-                    perimeter_mean = tabs_col[0].text_input(label='Perimeter mean')
-                    area_mean = tabs_col[0].text_input(label='Area mean')
-                    smoothness_mean = tabs_col[0].text_input(label='Smoothness mean')
+                    radius_mean = inner_tabs[0].text_input(label='Radius mean')
+                    texture_mean = inner_tabs[0].text_input(label='Texture mean')
+                    perimeter_mean = inner_tabs[0].text_input(label='Perimeter mean')
+                    area_mean = inner_tabs[0].text_input(label='Area mean')
+                    smoothness_mean = inner_tabs[0].text_input(label='Smoothness mean')
                 
                 with inner_tabs[1]:
-                    compactness_mean = tabs_col[0].text_input(label='Compactness mean')
-                    concavity_mean = tabs_col[0].text_input(label='Concavity mean')
-                    concave_points_mean = tabs_col[0].text_input(label='Concave points mean')
-                    symmetry_mean = tabs_col[0].text_input(label='Symmetry mean')
-                    fractal_dimension_mean = tabs_col[0].text_input(label='Fractal dimension mean')
+                    compactness_mean = inner_tabs[1].text_input(label='Compactness mean')
+                    concavity_mean = inner_tabs[1].text_input(label='Concavity mean')
+                    concave_points_mean = inner_tabs[1].text_input(label='Concave points mean')
+                    symmetry_mean = inner_tabs[1].text_input(label='Symmetry mean')
+                    fractal_dimension_mean = inner_tabs[1].text_input(label='Fractal dimension mean')
         
         with breast_cancer_tabs[1]:
-            with tabs_col[1]:
-                radius_se = st.text_input(label='Radius SE')
-                texture_se = st.text_input(label='Texture SE')
-                perimeter_se = st.text_input(label='Perimeter SE')
-                area_se = st.text_input(label='Area SE')
-                smoothness_se = st.text_input(label='Smoothness SE')
-                compactness_se = st.text_input(label='Compactness SE')
-                concavity_se = st.text_input(label='Concavity SE')
-                concave_points_se = st.text_input(label='Concave points SE')
-                symmetry_se = st.text_input(label='Symmetry SE')
-                fractal_dimension_se = st.text_input(label='Fractal dimension SE')
+            if tabs_col[1]:
+                inner_tabs = st.columns([6, 6])
+                with inner_tabs[0]:
+                    radius_se = inner_tabs[0].text_input(label='Radius SE')
+                    texture_se = inner_tabs[0].text_input(label='Texture SE')
+                    perimeter_se = inner_tabs[0].text_input(label='Perimeter SE')
+                    area_se = inner_tabs[0].text_input(label='Area SE')
+                    smoothness_se = inner_tabs[0].text_input(label='Smoothness SE')
+
+                with inner_tabs[1]:   
+                    compactness_se = inner_tabs[1].text_input(label='Compactness SE')
+                    concavity_se = inner_tabs[1].text_input(label='Concavity SE')
+                    concave_points_se = inner_tabs[1].text_input(label='Concave points SE')
+                    symmetry_se = inner_tabs[1].text_input(label='Symmetry SE')
+                    fractal_dimension_se = inner_tabs[1].text_input(label='Fractal dimension SE')
         
         with breast_cancer_tabs[2]:
-            with tabs_col[2]:
-                radius_worst = st.text_input(label='Radius worst')
-                texture_worst = st.text_input(label='Texture worst')
-                perimeter_worst = st.text_input(label='Perimeter worst')
-                area_worst = st.text_input(label='Area worst')
-                smoothness_worst = st.text_input(label='Smoothness worst')
-                compactness_worst = st.text_input(label='Compactness worst')
-                concavity_worst = st.text_input(label='Concavity worst')
-                concave_points_worst = st.text_input(label='Concave points worst')
-                symmetry_worst = st.text_input(label='Symmetry worst')
-                fractal_dimension_worst = st.text_input(label='Fractal dimension worst')
+            if tabs_col[2]:
+                inner_tabs = st.columns([6, 6])
+                with inner_tabs[0]:
+                    radius_worst = inner_tabs[0].text_input(label='Radius worst')
+                    texture_worst = inner_tabs[0].text_input(label='Texture worst')
+                    perimeter_worst = inner_tabs[0].text_input(label='Perimeter worst')
+                    area_worst = inner_tabs[0].text_input(label='Area worst')
+                    smoothness_worst = inner_tabs[0].text_input(label='Smoothness worst')
+
+            with inner_tabs[1]:
+                compactness_worst = inner_tabs[1].text_input(label='Compactness worst')
+                concavity_worst = inner_tabs[1].text_input(label='Concavity worst')
+                concave_points_worst = inner_tabs[1].text_input(label='Concave points worst')
+                symmetry_worst = inner_tabs[1].text_input(label='Symmetry worst')
+                fractal_dimension_worst = inner_tabs[1].text_input(label='Fractal dimension worst')
 
 
+    # diabetes prediction tab
+    with tabs[1]:
+        diabetes_patients_pregnancies = st.number_input(label='Total pregnancies', min_value=0, max_value=20)
+        diabetes_patients_glucose = st.number_input(label='Glucose', min_value=0, max_value=200)
+        diabetes_patitents_bp = st.number_input(label='Blood pressure', min_value=0, max_value=130)    # blood pressure
+        diabetes_patients_skin_thickness = st.number_input(label='Skin thickness', min_value=0, max_value=100)
+        diabetes_patients_insulin = st.number_input(label='Insulin', min_value=0, max_value=1000)
+        diabetes_patients_bmi = st.number_input(label='Body Mass Index (BMI)', min_value=0, max_value=70)
+        diabetes_pedigree_func = st.text_input(label='Diabetes pedigree function')
+        diabetes_patients_age = st.number_input(label='Age',min_value=10, max_value=120)
+
+    # heart disease tab
     with tabs[2]:
         tabs_col = st.columns([6, 6, 6], gap='medium')
         
@@ -90,7 +104,7 @@ def index_page():
         
         with tabs_col[2]:
             patients_exang = st.number_input(label='Exang',min_value=0)
-            patients_oldpeak = st.number_input(label='Oldpeak',min_value=0)
+            patients_oldpeak = st.text_input(label='Oldpeak')
             patients_slope = st.number_input(label='Slope',min_value=0)
             patients_ca = st.number_input(label='CA',min_value=0)
     
