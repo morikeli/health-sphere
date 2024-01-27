@@ -116,8 +116,37 @@ def index_page():
         patients_thal = st.number_input(label='Thal',min_value=0)
 
 
+    # parkinson's disease
+    with tabs[3]:
+        inline_col = st.columns([6, 6, 6])
+        extra_cols = st.columns([6, 6])
 
+        with inline_col[0]:
+            mdvp_freq = st.text_input(label='MDVP: Fo(Hz)', help='Average vocal fundamental frequency')
+            mdvp_freq_high = st.text_input(label='MDVP: Fhi(Hz)', help='Maximum vocal fundamental frequency')
+            mdvp_freq_low = st.text_input(label='MDVP: Flo(Hz)', help='Minimum vocal fundamental frequency')
+            mdvp_jitter_perc = st.text_input(label='MDVP: Jitter(%)')
+            mdvp_jitter_abs = st.text_input(label='MDVP: Jitter(Abs)')
+            mdvp_rap = st.text_input(label='MDVP: (RAP)')
+        
+        with inline_col[1]:
+            mdvp_ppq = st.text_input(label='MDVP: (PPQ)')
+            jitter = st.text_input(label='Jitter')
+            mdvp_shimmer = st.text_input(label='MDVP: (Shimmer)')
+            mdvp_shimmer_db = st.text_input(label='MDVP Shimmer(dB)')
+            mdvp_apq = st.text_input(label='MDVP: (APQ)')
+            shimmer_dda = st.text_input(label='Shimmer (DDA)')
+           
+        with inline_col[2]:
+            nhr = st.text_input(label='NHR')
+            hnr = st.text_input(label='HNR')
+            dfa = st.text_input(label='DFA')
+            rpde = st.text_input(label='RPDE')
+            d2 = st.text_input(label='D2')
+            ppe = st.text_input(label='PPE')
 
+        spread1 = extra_cols[0].text_input(label='Spread 1')
+        spread2 = extra_cols[1].text_input(label='Spread 2')
 
 
 if __name__ == '__main__':
