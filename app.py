@@ -15,7 +15,7 @@ def index_page():
         "Breast cancer prediction",
         "Diabetes prediction",
         "Heart disease prediction",
-        "Parkinson's prediction",
+        "Parkinson's disease prediction",
     ])
 
     # breast cancer prediction tab
