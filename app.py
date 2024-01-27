@@ -1,5 +1,5 @@
 import streamlit as st
-
+import time
 
 def index_page():
     st.set_page_config(
@@ -74,6 +74,10 @@ def index_page():
                 symmetry_worst = inner_tabs[1].text_input(label='Symmetry worst')
                 fractal_dimension_worst = inner_tabs[1].text_input(label='Fractal dimension worst')
 
+        submit_button = st.button(label='Submit form')
+
+        if submit_button:
+            pass
 
     # diabetes prediction tab
     with tabs[1]:
@@ -90,6 +94,11 @@ def index_page():
             diabetes_patients_insulin = st.number_input(label='Insulin', min_value=0, max_value=1000)
             diabetes_patients_skin_thickness = st.number_input(label='Skin thickness', min_value=0, max_value=100)
             diabetes_patients_pregnancies = st.number_input(label='Total pregnancies', min_value=0, max_value=20)
+        
+        submit_button = st.button(label='Submit')
+
+        if submit_button:
+            pass
 
     # heart disease tab
     with tabs[2]:
@@ -114,6 +123,11 @@ def index_page():
             patients_ca = st.number_input(label='CA',min_value=0)
     
         patients_thal = st.number_input(label='Thal',min_value=0)
+
+        submit_button = st.button(label='Submit data')
+
+        if submit_button:
+            pass
 
 
     # parkinson's disease
@@ -147,6 +161,12 @@ def index_page():
 
         spread1 = extra_cols[0].text_input(label='Spread 1')
         spread2 = extra_cols[1].text_input(label='Spread 2')
+
+        st.divider()
+        submit_button = st.button(label='Submit', type='primary', use_container_width=True)
+
+        if submit_button:
+            pass
 
 
 if __name__ == '__main__':
