@@ -1,5 +1,10 @@
+from utils.models import (
+    breast_cancer_detection,
+    diabetes_classifier, 
+    heart_disease_classifier, 
+    parkinsons_disease_classifier
+)
 import streamlit as st
-import time
 
 def index_page():
     st.set_page_config(
