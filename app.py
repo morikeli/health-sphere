@@ -1,4 +1,4 @@
-from utils.models import (
+from utils.classifiers import (
     breast_cancer_detection,
     diabetes_classifier, 
     heart_disease_classifier, 
