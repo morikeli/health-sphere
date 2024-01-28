@@ -1,6 +1,6 @@
 from utils.classifiers import (
-    breast_cancer_detection,
-    diabetes_classifier, 
+    breast_cancer_detection_classifier,
+    diabetes_prediction_classifier, 
     heart_disease_classifier, 
     parkinsons_disease_classifier
 )

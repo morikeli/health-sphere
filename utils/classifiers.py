@@ -2,7 +2,7 @@ from . import loader
 import streamlit as st
 
 
-def breast_cancer_detection(input_data):
+def breast_cancer_detection_classifier(input_data):
     """ This is a function that classifies benign or malignant breast cancerous tissues. """
 
     prediction = loader.breast_cancer_model.predict(input_data)
@@ -14,7 +14,7 @@ def breast_cancer_detection(input_data):
         return st.success('Diagnosis: Malignant!', icon='⚠️')
 
 
-def diabetes_classifier(data):
+def diabetes_prediction_classifier(data):
     prediction = loader.diabetes_model.predict(data)
 
     if prediction[0] == 0:
