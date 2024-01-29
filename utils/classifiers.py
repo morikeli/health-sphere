@@ -17,6 +17,7 @@ def breast_cancer_detection_classifier(input_data):
 def diabetes_prediction_classifier(data):
     """ This is a function that classifies whether a patient is diabetic or non-diabetic. """
 
+    data = np.asarray(data).reshape(1, -1)
     prediction = loader.diabetes_model.predict(data)
 
     if prediction[0] == 0:
@@ -29,6 +30,7 @@ def diabetes_prediction_classifier(data):
 def heart_disease_classifier(data):
     """ This function classifies whether a patient has a healthy or defective heart. """
 
+    data = np.asarray(data).reshape(1, -1)
     prediction = loader.heart_disease_model.predict(data)
 
     if prediction[0] == 0:
@@ -41,6 +43,7 @@ def heart_disease_classifier(data):
 def parkinsons_disease_classifier(data):
     """ This function classifies whether a patient has Parkinson's disease or is healthy. """
     
+    data = np.asarray(data).reshape(1, -1)
     prediction = loader.parkinsons_model.predict(data)
 
     if prediction[0] == 1:
