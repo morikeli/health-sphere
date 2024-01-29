@@ -80,9 +80,43 @@ def index_page():
                 fractal_dimension_worst = inner_tabs[1].text_input(label='Fractal dimension worst')
 
         submit_button = st.button(label='Submit form')
+        breast_cancer_dataset = (
+            radius_mean,
+            texture_mean,
+            perimeter_mean,
+            area_mean,
+            smoothness_mean,
+            compactness_mean,
+            concavity_mean,
+            concave_points_mean,
+            symmetry_mean,
+            fractal_dimension_mean,
+            radius_se,
+            texture_se,
+            perimeter_se,
+            area_se,
+            smoothness_se,
+            compactness_se,
+            concavity_se,
+            concave_points_se,
+            symmetry_se,
+            fractal_dimension_se,
+            radius_worst,
+            texture_worst,
+            perimeter_worst,
+            area_worst,
+            smoothness_worst,
+            compactness_worst,
+            concavity_worst,
+            concave_points_worst,
+            symmetry_worst,
+            fractal_dimension_worst,
+        )
 
         if submit_button:
-            pass
+            with st.spinner():
+                breast_cancer_detection_classifier(breast_cancer_dataset)
+
 
     # diabetes prediction tab
     with tabs[1]:
@@ -101,9 +135,20 @@ def index_page():
             diabetes_patients_pregnancies = st.number_input(label='Total pregnancies', min_value=0, max_value=20)
         
         submit_button = st.button(label='Submit')
+        diabetes_dataset = (
+            diabetes_patients_age,
+            diabetes_patitents_bp,
+            diabetes_patients_bmi,
+            diabetes_pedigree_func,
+            diabetes_patients_glucose,
+            diabetes_patients_insulin,
+            diabetes_patients_skin_thickness,
+            diabetes_patients_pregnancies
+        )
 
         if submit_button:
-            pass
+            with st.spinner('Analyzing diagnosis'):
+                diabetes_prediction_classifier(diabetes_dataset)
 
     # heart disease tab
     with tabs[2]:
@@ -163,15 +208,40 @@ def index_page():
             rpde = st.text_input(label='RPDE')
             d2 = st.text_input(label='D2')
             ppe = st.text_input(label='PPE')
+            spread1 = st.text_input(label='Spread 1')
 
-        spread1 = extra_cols[0].text_input(label='Spread 1')
-        spread2 = extra_cols[1].text_input(label='Spread 2')
-
+        spread2 = st.text_input(label='Spread 2')
         st.divider()
         submit_button = st.button(label='Submit', type='primary', use_container_width=True)
+        parkisons_dataset = (
+            mdvp_freq, 
+            mdvp_freq_high, 
+            mdvp_freq_low, 
+            mdvp_jitter_perc, 
+            mdvp_jitter_abs, 
+            mdvp_rap,
+            mdvp_ppq,
+            jitter,
+            mdvp_shimmer,
+            mdvp_shimmer_db,
+            mdvp_apq3,
+            mdvp_apq5,
+            mdvp_apq,
+            shimmer_dda,
+            nhr,
+            hnr,
+            rpde,
+            dfa,
+            spread1,
+            spread2,
+            d2,
+            ppe,
+
+        )
 
         if submit_button:
-            pass
+            with st.spinner('Analyszing diagnosis'):
+                parkinsons_disease_classifier(parkisons_dataset)
 
 
 if __name__ == '__main__':
