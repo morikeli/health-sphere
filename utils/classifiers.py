@@ -1,11 +1,13 @@
 from . import loader
 import streamlit as st
+import numpy as np
 
 
-def breast_cancer_detection_classifier(input_data):
+def breast_cancer_detection_classifier(data):
     """ This is a function that classifies benign or malignant breast cancerous tissues. """
 
-    prediction = loader.breast_cancer_model.predict(input_data)
+    data = np.asarray(data).reshape(1, -1)
+    prediction = loader.breast_cancer_model.predict(data)
 
     if prediction[0] == 0:
         return st.error('Diagnosis: Benign', icon='🌲')
