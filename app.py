@@ -174,16 +174,32 @@ def index_page():
     
         patients_thal = st.number_input(label='Thal',min_value=0)
 
+        _gender = 1 if patients_gender == "Male" else 0     # one-hot encoding
         submit_button = st.button(label='Submit data')
+        heart_disease_dataset = (
+            patients_age,
+            _gender,
+            patients_cp,
+            patients_trestbps,
+            patients_chol,
+            patients_fbs,
+            patients_restecg,
+            patients_thalach,
+            patients_exang,
+            patients_oldpeak,
+            patients_slope,
+            patients_ca,
+            patients_thal,
+        )
 
         if submit_button:
-            pass
+            with st.spinner('Analyzing diagnosis'):
+                heart_disease_classifier(heart_disease_dataset)
 
 
     # parkinson's disease
     with tabs[3]:
         inline_col = st.columns([6, 6, 6])
-        extra_cols = st.columns([6, 6])
 
         with inline_col[0]:
             mdvp_freq = st.text_input(label='MDVP: Fo(Hz)', help='Average vocal fundamental frequency')
@@ -192,13 +208,15 @@ def index_page():
             mdvp_jitter_perc = st.text_input(label='MDVP: Jitter(%)')
             mdvp_jitter_abs = st.text_input(label='MDVP: Jitter(Abs)')
             mdvp_rap = st.text_input(label='MDVP: (RAP)')
+            mdvp_ppq = st.text_input(label='MDVP: (PPQ)')
         
         with inline_col[1]:
-            mdvp_ppq = st.text_input(label='MDVP: (PPQ)')
             jitter = st.text_input(label='Jitter')
             mdvp_shimmer = st.text_input(label='MDVP: (Shimmer)')
             mdvp_shimmer_db = st.text_input(label='MDVP Shimmer(dB)')
             mdvp_apq = st.text_input(label='MDVP: (APQ)')
+            mdvp_apq3 = st.text_input(label='MDVP: (APQ3)')
+            mdvp_apq5 = st.text_input(label='MDVP: (APQ5)')
             shimmer_dda = st.text_input(label='Shimmer (DDA)')
            
         with inline_col[2]:
