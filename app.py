@@ -258,7 +258,7 @@ def index_page():
         )
 
         if submit_button:
-            with st.spinner('Analyszing diagnosis'):
+            with st.spinner('Analyzing diagnosis'):
                 parkinsons_disease_classifier(parkisons_dataset)
 
 
