@@ -12,3 +12,28 @@ Health-sphere is a web app that allows a user (medical staff, e.g. doctors, nurs
 
 The models used have an accuracy of 100% ± 2.
 
+### User instructions
+1. You can access the website by clicking this [link](https://health-sphere.streamlit.app/).
+2. Select the tab you want to input data.
+3. Enter numerical data in the input fields provided and submit form.
+4. Wait for response as the models diagnose the data input.
+5. Once diagnosis is through, a message will be displayed of the current diagnosis.
+
+### Developer instructions
+```bash
+   $ cd Desktop
+   $ git clone https:github.com/morikeli/health-sphere/
+   $ python3 -m venv .venv
+   $ source .venv/bin/activate
+   $ pip install -r requirements.txt
+```
+- Once installtion is complete, open type the following command to open the folder on your default browser.
+
+   ```bash
+      $ streamlit run app.py
+   ```
+
+### Bug reports
+Incase of an error or bug create an issue using the `Issues` tab or create a new branch using Git and make a pull request.
+
+- Don't forget to star the repo. 😉
